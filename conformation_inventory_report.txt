@@ -1,0 +1,222 @@
+CONFORMATIONAL DATA INVENTORY REPORT
+======================================================================
+
+
+BATCH1:
+
+  Conformation 1:
+    File: batch1_conf_1_results.zip
+    Proteins (11):
+      - AURKC
+      - CDC2L5
+      - CDK2
+      - CDK3
+      - CDK5
+      - CSNK1A1
+      - NEK7
+      - PFPK5_Pfalciparum_
+      - PIM3
+      - STK16
+      - TESK1
+
+  Conformation 2:
+    File: batch1_conf_2_results.zip
+    Proteins (11):
+      - AURKC
+      - CDC2L5
+      - CDK2
+      - CDK3
+      - CDK5
+      - CSNK1A1
+      - NEK7
+      - PFPK5_Pfalciparum_
+      - PIM3
+      - STK16
+      - TESK1
+
+  Conformation 3:
+    File: batch1_conf_3_results.zip
+    Proteins (11):
+      - AURKC
+      - CDC2L5
+      - CDK2
+      - CDK3
+      - CDK5
+      - CSNK1A1
+      - NEK7
+      - PFPK5_Pfalciparum_
+      - PIM3
+      - STK16
+      - TESK1
+
+BATCH2:
+
+  Conformation 1:
+    File: batch2_conf_1_results.zip
+    Proteins (10):
+      - AURKA
+      - AURKB
+      - CDK7
+      - CDKL1
+      - CSNK2A2
+      - MEK3
+      - MEK4
+      - MST4
+      - MYLK4
+      - YANK2
+
+  Conformation 2:
+    File: batch2_conf_2_results.zip
+    Proteins (10):
+      - AURKA
+      - AURKB
+      - CDK7
+      - CDKL1
+      - CSNK2A2
+      - MEK3
+      - MEK4
+      - MST4
+      - MYLK4
+      - YANK2
+
+  Conformation 3:
+    File: batch2_conf_3_results.zip
+    Proteins (10):
+      - AURKA
+      - AURKB
+      - CDK7
+      - CDKL1
+      - CSNK2A2
+      - MEK3
+      - MEK4
+      - MST4
+      - MYLK4
+      - YANK2
+
+BATCH3:
+
+  Conformation 1:
+    File: batch3_conf_1_results.zip
+    Proteins (12):
+      - BRK
+      - CLK2
+      - CSNK1E
+      - EPHB2
+      - GSK3B
+      - JNK1
+      - JNK3
+      - LCK
+      - MST1
+      - PIP5K2C
+      - SRMS
+      - TGFBR1
+
+  Conformation 2:
+    File: batch3_conf_2_results.zip
+    Proteins (6):
+      - BRK
+      - CSNK1E
+      - GSK3B
+      - JNK1
+      - JNK3
+      - PIP5K2C
+
+  Conformation 3:
+    File: batch3_conf_3_results.zip
+    Proteins (6):
+      - BRK
+      - CSNK1E
+      - GSK3B
+      - JNK1
+      - JNK3
+      - PIP5K2C
+
+BATCH4:
+
+  Conformation 1:
+    File: batch4_conf_1_results.zip
+    Proteins (6):
+      - CLK2
+      - EPHB2
+      - LCK
+      - MST1
+      - SRMS
+      - TGFBR1
+
+  Conformation 2:
+    File: batch4_conf_2_results.zip
+    Proteins (6):
+      - CLK2
+      - EPHB2
+      - LCK
+      - MST1
+      - SRMS
+      - TGFBR1
+
+  Conformation 3:
+    File: batch4_conf_3_results.zip
+    Proteins (6):
+      - CLK2
+      - EPHB2
+      - LCK
+      - MST1
+      - SRMS
+      - TGFBR1
+
+BATCH5:
+
+  Conformation 1:
+    File: batch5_conf_1_results.zip
+    Proteins (6):
+      - AKT1
+      - CAMK2A
+      - CHEK1
+      - MAPKAPK5
+      - MKNK2
+      - NDR2
+
+  Conformation 2:
+    File: batch5_conf_2_results.zip
+    Proteins (6):
+      - AKT1
+      - CAMK2A
+      - CHEK1
+      - MAPKAPK5
+      - MKNK2
+      - NDR2
+
+  Conformation 3:
+    File: batch5_conf_3_results.zip
+    Proteins (6):
+      - AKT1
+      - CAMK2A
+      - CHEK1
+      - MAPKAPK5
+      - MKNK2
+      - NDR2
+
+BATCH6:
+
+  Conformation 1:
+    File: batch6_conf_1_results.zip
+    Proteins (8):
+      - ACVR1
+      - ACVR2B
+      - BLK
+      - CHEK2
+      - GRK1
+      - LYN
+      - PCTK2
+      - PFCDPK1_Pfalciparum_
+
+  Conformation 2:
+    File: batch6_conf_2_results.zip
+    Proteins (8):
+      - ACVR1
+      - ACVR2B
+      - BLK
+      - CHEK2
+      - GRK1
+      - LYN
+      - PCTK2
+      - PFCDPK1_Pfalciparum_

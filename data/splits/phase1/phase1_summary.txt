@@ -1,0 +1,57 @@
+Phase 1 Dataset Summary
+=======================
+Created: 2026-01-29 14:48:00
+
+DATASET OVERVIEW
+----------------
+Total Interactions: 6324
+Proteins (ESM-2):   93
+Drugs:              68
+
+BINARY LABELS (threshold=1000.0)
+-----------------------------------------
+Active (Y=1):   941 (14.9%)
+Inactive (Y=0): 5383 (85.1%)
+Imbalance ratio: 5.721
+
+SPLIT STRATEGY
+--------------
+Type: Random (interaction-level split)
+Ratio: 70% train / 15% val / 15% test
+Stratification: Yes (preserves class distribution)
+
+Train: 4426 (70.0%)
+  Active=659, Inactive=3767
+  Proteins=93, Drugs=68
+
+Val:   949 (15.0%)
+  Active=141, Inactive=808
+  Proteins=93, Drugs=68
+
+Test:  949 (15.0%)
+  Active=141, Inactive=808
+  Proteins=93, Drugs=68
+
+PROTEIN OVERLAP
+---------------
+This is EXPECTED for random splits (splits interactions, not proteins)
+Train-Val overlap:  93 proteins
+Train-Test overlap: 93 proteins
+
+Note: Phase 2 will use protein-based splits for generalization testing
+
+CLASS IMBALANCE HANDLING
+-------------------------
+Recommended: BCEWithLogitsLoss(pos_weight=5.721)
+This downweights the majority class (active samples)
+
+FILES
+-----
+- phase1_train_esm2.csv: Training set
+- phase1_val_esm2.csv: Validation set  
+- phase1_test_esm2.csv: Test set
+- phase1_full_dataset.csv: Complete dataset
+
+NEXT STEP
+---------
+Run training: python scripts/train_phase1.py

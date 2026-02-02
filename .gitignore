@@ -1,0 +1,93 @@
+# ===================================
+# DATA FILES (too large for Git)
+# ===================================
+data/raw/*.csv
+data/raw/*.pdb
+data/processed/*.pkl
+data/processed/*.csv
+data/poc/*.csv
+data/poc/*.fasta
+data/conformations/
+data/hierarchical/
+data/pretraining/
+
+# Embeddings (ESM, etc.)
+embeddings/
+data/embeddings/
+*.npy
+
+# Keep directory structure
+!data/**/.gitkeep
+!embeddings/**/.gitkeep
+
+# ===================================
+# MODEL CHECKPOINTS
+# ===================================
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+!checkpoints/.gitkeep
+
+# ===================================
+# LOGS & RUNS
+# ===================================
+logs/
+runs/
+wandb/
+*.log
+
+# ===================================
+# VISUALIZATIONS
+# ===================================
+visualizations/**/*.png
+visualizations/**/*.jpg
+visualizations/**/*.jpeg
+!visualizations/paper_figures/*.pdf
+
+# ===================================
+# PYTHON
+# ===================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# ===================================
+# JUPYTER
+# ===================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ===================================
+# ENVIRONMENTS (VERY IMPORTANT)
+# ===================================
+dti-env/
+venv/
+env/
+ENV/
+.venv/
+
+# ===================================
+# IDEs / OS
+# ===================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ===================================
+# GENERATED CONFIRMATION ZIP FILES
+# ===================================
+confirmation-zips/
+*.zip
+
+# Large binding databases
+BindingDB_All.tsv
+*.tsv
+*.gz

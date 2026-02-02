@@ -1,0 +1,65 @@
+# requirements.txt - DTI Prediction Project Dependencies
+
+# =====================================================
+# STEP 1: Core Data Science Libraries
+# =====================================================
+pandas>=1.5.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+seaborn>=0.12.0
+scikit-learn>=1.1.0
+scipy>=1.9.0
+
+# =====================================================
+# STEP 2: Chemistry and Molecular Libraries
+# =====================================================
+# Note: rdkit should be installed via conda: conda install -c conda-forge rdkit
+pubchempy>=1.0.4
+chembl-webresource-client>=0.10.8
+
+# =====================================================
+# STEP 3: Deep Learning and Graph Neural Network Libraries
+# =====================================================
+torch>=1.12.0
+torchvision>=0.13.0
+torchaudio>=0.12.0
+torch-geometric>=2.1.0
+networkx>=2.8.0
+dgl>=1.1.0
+
+# =====================================================
+# STEP 4: Bioinformatics and Protein Analysis Libraries
+# =====================================================
+biopython>=1.79
+biotite>=0.37.0
+prody>=2.4.0
+mdanalysis>=2.2.0
+
+# =====================================================
+# STEP 5: Machine Learning and Model Development Libraries
+# =====================================================
+transformers>=4.21.0
+datasets>=2.4.0
+tensorboard>=2.9.0
+tqdm>=4.64.0
+joblib>=1.1.0
+wandb>=0.13.0
+optuna>=3.0.0
+
+# =====================================================
+# STEP 6: Additional Utility Libraries
+# =====================================================
+h5py>=3.7.0
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+jupyter>=1.0.0
+ipykernel>=6.15.0
+ipywidgets>=8.0.0
+
+# =====================================================
+# Additional Dependencies for DTI Project
+# =====================================================
+plotly>=5.10.0        # Interactive plots
+kaleido>=0.2.1        # Static image export for plotly
+fair-esm>=2.0.0       # Protein language models (ESM-2)
+py3dmol>=1.8.0        # 3D molecular visualization

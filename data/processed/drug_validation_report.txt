@@ -1,0 +1,24 @@
+Drug Validation Report
+======================================================================
+
+Total drugs in dataset: 68
+Passed validation: 63 (92.6%)
+Rejected: 5 (7.4%)
+
+Validation Criteria:
+- Lipinski's Rule of Five
+- MW: 150-800 Da
+- LogP: -3 to 7
+- H-donors: ≤5
+- H-acceptors: ≤10
+- TPSA: ≤140
+- Rotatable bonds: ≤15
+- Single molecule (no fragments)
+
+Rejected Drugs:
+----------------------------------------------------------------------
+25127112: TPSA 160.9 (should be ≤140)
+10427712: TPSA 144.1 (should be ≤140)
+9926054: Multiple fragments (2)
+11984591: H-acceptors 12 (should be ≤10)
+44150621: TPSA 175.0 (should be ≤140)

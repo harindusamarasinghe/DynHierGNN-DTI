@@ -1,0 +1,204 @@
+dynhiergnn-dti/                          # Root project directory
+│
+├── README.md                             # Project overview & quick start
+├── requirements.txt                      # Python dependencies (you have this)
+├── environment.yml                       # Conda environment file
+├── .gitignore                           # Git ignore file
+├── LICENSE                              # Open source license (if releasing)
+│
+├── data/                                # DATA DIRECTORY (Git-ignored)
+│   ├── .gitkeep                         # Keep folder structure in Git
+│   │
+│   ├── raw/                             # ✅ You have this - Raw downloads
+│   │   ├── davis_full.csv              # ✅ Full Davis dataset from TDC
+│   │   ├── chembl_500k.csv             # ChEMBL data (Week 2-3)
+│   │   └── pdb_experimental/           # Experimental structures (Week 17-18)
+│   │
+│   ├── splits/                          # ✅ You have this - TDC splits
+│   │   ├── davis_train.csv
+│   │   ├── davis_valid.csv
+│   │   └── davis_test.csv
+│   │
+│   ├── processed/                       # ✅ You have this - Processed data
+│   │   ├── drugs.csv                   # ✅ Drug properties extracted
+│   │   ├── proteins.csv                # Protein sequences (to add)
+│   │   ├── drugs_graphs.pkl            # PyG graph objects (Week 4)
+│   │   └── proteins_graphs.pkl         # PyG graph objects (Week 4)
+│   │
+│   ├── poc/                             # 🆕 POC SUBSET (Week 1) - CRITICAL
+│   │   ├── poc_davis.csv               # 50 proteins × 20 drugs (~400 pairs)
+│   │   ├── poc_train.csv               # 70% training
+│   │   ├── poc_val.csv                 # 15% validation
+│   │   ├── poc_test.csv                # 15% test
+│   │   ├── protein_mapping.csv         # 50 protein sequences + metadata
+│   │   ├── drug_smiles.csv             # 20 drug SMILES + properties
+│   │   ├── poc_proteins.fasta          # For ColabFold input
+│   │   └── poc_dataset_documentation.txt
+│   │
+│   ├── conformations/                   # 🆕 Generated conformations (Week 2-3)
+│   │   ├── poc/                        # POC conformations (Week 2-3)
+│   │   │   ├── PROT_001/
+│   │   │   │   ├── conf_1.pdb
+│   │   │   │   ├── conf_2.pdb
+│   │   │   │   ├── conf_3.pdb
+│   │   │   │   ├── plddt_scores.json
+│   │   │   │   └── metadata.json
+│   │   │   ├── PROT_002/
+│   │   │   └── ... (50 proteins)
+│   │   │
+│   │   └── full/                       # Full dataset conformations (Week 7-8)
+│   │       ├── PROT_001/ ... PROT_442/
+│   │       └── quality_report.csv
+│   │
+│   ├── embeddings/                      # 🆕 Pre-computed embeddings (Week 9)
+│   │   ├── esm2/                       # ESM-2 protein embeddings
+│   │   │   ├── PROT_001_esm2.npy
+│   │   │   └── ... (442 proteins)
+│   │   └── drug_pretrained/            # Pre-trained drug embeddings
+│   │
+│   ├── hierarchical/                    # 🆕 Hierarchical representations (Week 10)
+│   │   ├── drugs/
+│   │   │   ├── DRUG_001_hierarchical.pkl
+│   │   │   └── ... (68 drugs)
+│   │   └── proteins/
+│   │       ├── PROT_001_conf1-6_hierarchical.pkl
+│   │       └── ... (442 × 6 conformations)
+│   │
+│   └── pretraining/                     # 🆕 Pre-training datasets (Week 2-3)
+│       ├── drug_triplets.pkl           # (anchor, positive, negative)
+│       └── chembl_fingerprints.pkl
+│
+├── scripts/                             # 🆕 STANDALONE SCRIPTS (move your scripts here!)
+│   ├── download_davis.py               # ⬅️ MOVE from data/ folder
+│   ├── extract_drugs.py                # ⬅️ MOVE from data/ folder
+│   ├── create_poc_subset.py            # Week 1 - subset creation
+│   ├── create_protein_fasta.py         # Week 1 - FASTA for ColabFold
+│   ├── download_chembl.py              # Week 2 - ChEMBL download
+│   ├── generate_conformations.sh       # Week 2-3 - batch processing
+│   ├── quality_control.py              # Week 3 - conformation QC
+│   ├── process_full_dataset.py         # Week 9-10 - full processing
+│   ├── reproduce_paper_results.sh      # Week 24 - reproduction
+│   └── README.md                       # Script documentation
+│
+├── models/                              # 🆕 MODEL IMPLEMENTATIONS
+│   ├── __init__.py
+│   ├── drug_gnn.py                     # Week 4 - Drug GNN (atomic level)
+│   ├── protein_gnn.py                  # Week 4 - Protein GNN (residue level)
+│   ├── hierarchical_drug_gnn.py        # Week 11 - 3-level drug hierarchy
+│   ├── hierarchical_protein_gnn.py     # Week 11 - 3-level protein hierarchy
+│   ├── temporal_attention.py           # Week 4 - Conformational attention
+│   ├── cross_attention.py              # Week 12 - Drug-protein interaction
+│   ├── dynhiergnn_dti.py              # Week 12 - Complete model
+│   ├── baselines/                      # Week 15 - Baseline models
+│   │   ├── deepdta.py
+│   │   ├── graphdta.py
+│   │   └── h2gnndti.py
+│   ├── evidential.py                   # Week 21-22 - Uncertainty (optional)
+│   └── README.md
+│
+├── training/                            # 🆕 TRAINING & EVALUATION
+│   ├── __init__.py
+│   ├── train.py                        # Main training script
+│   ├── evaluate.py                     # Evaluation script
+│   ├── config.yaml                     # Training configuration
+│   ├── losses.py                       # Loss functions
+│   ├── metrics.py                      # Evaluation metrics
+│   ├── dataloader.py                   # Custom DataLoader
+│   ├── utils.py                        # Training utilities
+│   └── README.md
+│
+├── interpretability/                    # 🆕 INTERPRETABILITY (Week 19-20)
+│   ├── __init__.py
+│   ├── integrated_gradients.py         # IG implementation
+│   ├── attention_analysis.py           # Attention extraction
+│   ├── attribution_aggregation.py      # Hierarchical attribution
+│   ├── visualization.py                # Plotting utilities
+│   ├── pymol_scripts/                  # PyMOL automation
+│   │   ├── visualize_attribution.py
+│   │   └── generate_figures.sh
+│   ├── evaluation.py                   # Binding site metrics
+│   └── README.md
+│
+├── experiments/                         # 🆕 EXPERIMENTAL PLANS & RESULTS
+│   ├── poc_experimental_plan.md        # Week 1 - POC plan
+│   ├── literature_review_notes.md      # Week 1 - Literature notes
+│   ├── advisor_meeting_summary.md      # Week 1, 5, 6 - Meeting notes
+│   ├── ablation_studies.py             # Week 15 - Ablation experiments
+│   ├── cold_start_eval.py              # Week 16 - Cold-start evaluation
+│   ├── conformational_validation.py    # Week 17 - PDB validation
+│   ├── cryptic_pockets.py              # Week 18 - Pocket analysis
+│   └── results/                        # Experimental results
+│       ├── poc_results.csv
+│       ├── baseline_comparison.csv
+│       ├── ablation_results.csv
+│       └── figures/
+│
+├── notebooks/                           # 🆕 JUPYTER NOTEBOOKS
+│   ├── 01_data_preparation.ipynb       # Week 1 - Dataset overview
+│   ├── 02_conformational_generation.ipynb  # Week 2-3 - ColabFold tutorial
+│   ├── 03_training_tutorial.ipynb      # Week 4-5 - Training demo
+│   ├── 04_prediction_demo.ipynb        # Week 12 - Inference demo
+│   ├── 05_interpretability_tutorial.ipynb  # Week 19-20 - Attribution
+│   ├── 06_results_analysis.ipynb       # Week 15-16 - Results
+│   └── README.md
+│
+├── checkpoints/                         # 🆕 MODEL CHECKPOINTS (Git-ignored)
+│   ├── .gitkeep
+│   ├── poc/
+│   │   ├── poc_multiconf_best.pth
+│   │   ├── poc_static_best.pth
+│   │   └── training_curves.png
+│   ├── pretrained/
+│   │   ├── drug_encoder_pretrained.pth
+│   │   └── protein_encoder_pretrained.pth
+│   └── full/
+│       ├── dynhiergnn_dti_best.pth
+│       ├── dynhiergnn_dti_last.pth
+│       └── training_history.json
+│
+├── logs/                                # 🆕 TRAINING LOGS (Git-ignored)
+│   ├── tensorboard/
+│   ├── wandb/
+│   └── training_logs.txt
+│
+├── visualizations/                      # 🆕 GENERATED FIGURES (Git-ignored)
+│   ├── poc/
+│   │   ├── attention_heatmaps/
+│   │   └── training_curves/
+│   ├── paper_figures/                  # Final publication figures
+│   │   ├── figure_1_architecture.pdf
+│   │   ├── figure_2_results.pdf
+│   │   └── ...
+│   └── supplementary/
+│
+├── tests/                               # 🆕 UNIT TESTS (Week 24)
+│   ├── __init__.py
+│   ├── test_models.py
+│   ├── test_data_processing.py
+│   ├── test_interpretability.py
+│   └── README.md
+│
+├── docs/                                # 🆕 DOCUMENTATION
+│   ├── architecture_diagram.pdf
+│   ├── dataset_statistics.pdf
+│   ├── api_documentation.md
+│   ├── REPRODUCING.md                  # Reproduction guide
+│   └── CONTRIBUTING.md                 # If open-sourcing
+│
+└── thesis/                              # 🆕 THESIS DOCUMENTS (Week 23-26)
+    ├── main.tex / main.docx
+    ├── sections/
+    │   ├── 01_introduction.tex
+    │   ├── 02_related_work.tex
+    │   ├── 03_methodology.tex
+    │   ├── 04_experiments.tex
+    │   ├── 05_results.tex
+    │   └── 06_conclusion.tex
+    ├── figures/                        # Thesis figures
+    ├── tables/                         # Thesis tables
+    ├── bibliography.bib
+    ├── defense/                        # Defense presentation
+    │   ├── slides.pptx / slides.pdf
+    │   └── demo.ipynb
+    └── final/                          # Final submitted versions
+        └── thesis_final.pdf
